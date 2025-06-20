@@ -1,53 +1,74 @@
 # Actividad práctica: Presentaciones vía Pull Request
 
 ## Objetivo
-Cada alumno aprenderá a:
-- Clonar un repositorio desde GitHub
-- Crear una nueva rama
-- Hacer cambios en un archivo de plantilla
-- Subir los cambios con `git push`
-- Crear un Pull Request
-- Ver sus cambios integrados en `main`
+Aprender a trabajar con Git y GitHub siguiendo un flujo completo de trabajo.
 
 ---
 
 ## Instrucciones paso a paso
 
-```bash
-# 1. Clona el repositorio
-$ git clone git@github.com:campus-CodeArts/Actividad-Pr-ctica-Github.git
-$ cd Actividad-Pr-ctica-Github
+1. **Clona el repositorio y revisa la configuración del remoto**
+   ```bash
+   git clone git@github.com:campus-CodeArts/Actividad-Pr-ctica-Github.git
+   cd Actividad-Pr-ctica-Github
+   git remote -v        # verifica la URL del repositorio
+   git branch           # muestra las ramas locales
+   ```
 
-# 2. Crea tu rama personal con tu nombre
-$ git checkout -b rama/nombredelalumno
+2. **Crea tu rama personal**
+   ```bash
+   git checkout -b rama/nombredelalumno
+   git status           # comprueba el estado del repositorio
+   ```
 
-# 3. Edita plantilla.md y añade tu nombre en tu grupo
-# Por ejemplo si estas en DAW y eres del grupo Koala, en plantilla.md añade tu nombre y grupo (Koala) en el apartado de DAW
+3. **Edita `plantilla.md` para añadir tu nombre en tu grupo**
+   - Si estás en DAW y perteneces al grupo Koala, añade `Nombre Apellido (Koala)` debajo del encabezado de DAW.
+   - No borres a tus compañeros.
 
-# 4. Añade y haz commit de los cambios
-$ git add plantilla.md
-$ git commit -m "Añadida presentación de Nombre Apellido (DAW)"
+4. **Revisa los cambios antes de confirmarlos**
+   ```bash
+   git diff plantilla.md
+   ```
 
-# 5. Sube tu rama a GitHub
-$ git push origin rama/nombredelalumno
+5. **Registra el cambio en el repositorio**
+   ```bash
+   git add plantilla.md
+   git commit -m "Añadida presentación de Nombre Apellido (DAW)"
+   git log --oneline -1  # muestra el último commit
+   ```
 
-# 6. Abre un Pull Request y haz merge a main
-1. Ve al repositorio en GitHub.
-2. GitHub te mostrará un botón para comparar y crear un Pull Request ("Compare & pull request"). Haz clic ahí.
-3. Asegúrate de que estás comparando tu rama con `main`.
-4. Añade un título claro y una descripción si lo deseas.
-5. Haz clic en "Create pull request".
-6. Una vez creado el Pull Request, haz clic en el botón verde "Merge pull request".
-7. Confirma haciendo clic en "Confirm merge".
-```
+6. **Envía tu rama al repositorio remoto**
+   ```bash
+   git push origin rama/nombredelalumno
+   git branch -a        # verifica que tu rama remota esté disponible
+   ```
+
+7. **Abre un Pull Request en GitHub**
+   1. Ve al repositorio en GitHub.
+   2. Haz clic en `Compare & pull request`.
+   3. Revisa que la base sea `main` y la comparación sea tu rama.
+   4. Escribe un título descriptivo y crea el pull request.
+
+8. **Fusiona tu Pull Request**
+   1. Una vez aprobado, utiliza `Merge pull request` y confirma.
+
+9. **Actualiza tu rama `main` local**
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
+
+10. **Limpia ramas locales que ya no uses**
+    ```bash
+    git branch -d rama/nombredelalumno
+    ```
 
 ---
 
 ## Notas importantes
 
 - No modifiques otras partes del archivo.
-- Mantén el orden alfabético por grupo.
-- Espera a que el profesor revise y apruebe tu PR.
+- Mantén el orden alfabético y por grupo.
 
 ---
 
