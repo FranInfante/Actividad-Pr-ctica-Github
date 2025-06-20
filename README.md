@@ -55,11 +55,7 @@ Aprender a trabajar con Git y GitHub siguiendo un flujo completo de trabajo.
 9. **Actualiza tu rama `main` local**
    ```bash
    git checkout main
-   # si estabas trabajando en otra rama y tienes cambios sin confirmar
-   git stash push -m "trabajo en progreso"
    git pull origin main
-   git checkout rama/nombredelalumno
-   git stash pop
    ```
 
 10. **Limpia ramas locales que ya no uses**
@@ -67,20 +63,12 @@ Aprender a trabajar con Git y GitHub siguiendo un flujo completo de trabajo.
     git branch -d rama/nombredelalumno
     ```
 
-11. **Ejercicios adicionales en equipo**
-    1. Trabaja en parejas y crea una rama colaborativa.
-    2. Realiza cambios independientes y usa `git pull --rebase` para integrarlos.
-    3. Si surge un conflicto, resuélvelo y registra el merge con un commit.
-    4. Practica `git stash` para guardar cambios temporales mientras revisas otra rama.
-    5. Una vez fusionada la rama, revisa el historial con `git log --graph`.
-
 ---
 
 ## Notas importantes
 
 - No modifiques otras partes del archivo.
-- Mantén el orden alfabético por grupo.
-- Espera a que el profesor revise y apruebe tu PR.
+- Mantén el orden alfabético y por grupo.
 
 ---
 
